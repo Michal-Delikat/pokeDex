@@ -1,0 +1,11 @@
+<div class="wrapper">
+  @if (pokemon$ | async; as pokemon) {
+    <h3>{{pokemon.id}}</h3>
+    <h2 class="name">{{pokemon.name | pokemonName }}</h2>
+    <img class="picture" [src]="imageService.getPokemonImageUrl(pokemon.id)"/>
+    <section class="pokemon-info">
+      <h3>Height: <span>{{pokemon.height | pokemonHeight}}</span></h3>
+      <h3>Weight: <span>{{pokemon.weight | pokemonWeight}}</span></h3>
+    </section>
+  }
+</div>
